@@ -1,0 +1,693 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap');
+
+:root {
+
+    /* cores principais */
+    --cor-neon: #39FF14;
+
+    /* pretos */
+    --cor-body: #0a0a0a;
+    --cor-cabecalho: #141414;
+    --cor-cinza: #1E1E1E;
+
+    --cor-branco-levemente-cinzar: #BDC3C7;
+
+    /* textos */
+    --cor-texto: #eaeaea;
+
+    /* hover */
+    --cor-hover: #66ff4d;
+
+    /*Gradiente para o body*/
+    --gradiente-body: linear-gradient(180deg, #050505 50%, #001a08 100%);
+
+    /* fontes */
+    --fonte-titulo: "Poppins", sans-serif;
+    --fonte-texto: "Roboto", sans-serif;
+
+}
+
+html,
+body {
+    scroll-padding-top: 120px;
+    scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 'cabecalho cabecalho cabecalho'
+        'conteudo conteudo conteudo'
+        'rodape rodape rodape';
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: auto 1fr auto;
+    text-align: center;
+    box-sizing: content-box;
+
+}
+
+.header {
+    grid-area: header;
+    background: var(--gradiente-moderno);
+    padding: 2.5rem;
+
+}
+
+.cabecalho {
+    grid-area: cabecalho;
+    background: radial-gradient(circle at center, #0a2b0a 0%, #000000 80%);
+    color: var(--cor-texto);
+    font-size: 2rem;
+    padding: 0.8rem;
+    border-bottom: 2px solid var(--cor-neon);
+    /*o cabecalho ficar fixo*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+}
+
+
+.conteudo {
+    grid-area: conteudo;
+    background-color: var(--cor-body);
+    background: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
+    background-attachment: fixed;
+    color: var(--cor-texto);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 7rem 5vw;
+}
+
+.rodape {
+    grid-area: rodape;
+    /*background: linear-gradient(180deg, #000000 0%, #051a05 100%); se algum momento eu mudar de ideai uso esse gradiente*/
+    background: radial-gradient(circle at center, #0a2b0a 0%, #000000 80%);
+    border-top: 2px solid var(--cor-neon);
+    /* Linha neon para separar */
+    color: var(--cor-texto);
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.cabecalho__navegacao {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.navecagao__menu__esquerda,
+.navecagao__menu__direita {
+    display: flex;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-size: 0.8rem;
+}
+
+/*removendo o menu do desketop o icone*/
+.menu__toggle {
+    display: none;
+}
+
+.menu__navegacao__mobile {
+    display: none;
+}
+
+.navecagao__linkin__linkis {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-family: var(--fonte-titulo);
+    gap: 1rem;
+    position: relative;
+    font-size: 1.5rem;
+}
+
+.navecagao__linkin__linkis::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background-color: var(--cor-neon);
+    transition: width 0.3s ease-in-out;
+}
+
+.navecagao__linkin__linkis:hover::before {
+    width: 100%;
+}
+
+.navecagao__linkin__linkis:hover {
+    color: var(--cor-neon);
+    transition: width 0.3s ease-in-out;
+}
+
+.cabecalho__logo {
+    /*aqui eu definir o tamnho inicial da  minha logo*/
+    width: 120px;
+    height: auto;
+    /* Suavizei a animação (0.3s é o tempo de sua duração) */
+    transition: transform 0.3s ease-out;
+}
+
+.cabecalho__logo:hover {
+    /* aqui aumenta o tamanho em 20%*/
+    transform: scale(1.2);
+}
+
+.conteudo__home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0;
+    gap: 2rem;
+    flex: 1;
+    margin-top: 6rem;
+}
+
+.conteudo__home__informacao {
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    flex: 1;
+}
+
+.conteudo__home__titulo {
+    font-family: var(--fonte-titulo);
+    font-weight: 800;
+    font-size: 2.6rem;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    color: var(--cor-branco-levemente-cinzar);
+}
+
+.conteudo__home__destaque {
+    color: var(--cor-neon);
+}
+
+.conteudo__home__paragrafo {
+    font-family: var(--fonte-texto);
+    font-size: 2.1rem;
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--cor-branco-levemente-cinzar);
+}
+
+.conteudo__home__linkins {
+    display: flex;
+    gap: 1.6rem;
+    margin-top: 2.5rem;
+}
+
+.home__linkins__linkin {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-family: var(--fonte-titulo);
+    gap: 1rem;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.home__linkins__linkin:hover {
+    transform: scale(1.2);
+}
+
+.conteudo__home__foto {
+    --espessura-borda: 2px;
+    display: block;
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.6rem;
+    padding: 2.5px;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+
+    /* O primeiro gradiente é o fundo da imagem, o segundo é a luz */
+    background-image:
+        linear-gradient(var(--cor-cabecalho), var(--cor-cabecalho)),
+        conic-gradient(from var(--angulo), transparent 70%, var(--cor-neon));
+
+    /* Registramos a variável para a animação funcionar no background */
+    animation: girar-neon 4s linear infinite;
+}
+
+/* essa é uma  propriedade para animar o ângulo do gradiente */
+@property --angulo {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes girar-neon {
+    from {
+        --angulo: 0deg;
+    }
+
+    to {
+        --angulo: 360deg;
+    }
+}
+
+.sobre {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    min-height: 80vh;
+    margin: 6rem auto;
+    max-width: 1100px;
+}
+
+.sobre__descricao {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.sobre__subtitulo {
+    font-family: var(--fonte-titulo);
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: left;
+    color: var(--cor-neon);
+    animation: brilho 2s infinite alternate;
+}
+
+@keyframes brilho {
+    from {
+        text-shadow: 0 0 5px var(--cor-body);
+    }
+
+    to {
+        text-shadow: 0 0 20px var(--cor-neon);
+    }
+}
+
+.sobre__descricao__paragrafo {
+    flex: 1;
+    max-width: 800px;
+    text-align: left;
+    font-family: var(--fonte-titulo);
+    color: var(--cor-branco-levemente-cinzar);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    letter-spacing: 0.3px;
+}
+
+.sobre__imagem {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.sobre__imagem__front {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 0.6rem;
+    object-fit: cover;
+    border: 1px solid var(--cor-neon);
+    box-shadow: 0 0 16px rgba(57, 255, 20, 0.3);
+    transition: transform 0.5s;
+}
+
+.sobre__imagem__front:hover {
+    transform: scale(1.1);
+}
+
+.projetos {
+    padding: 30px 40px;
+    text-align: center;
+}
+
+.projetos__titulo {
+    font-size: 2rem;
+    color: var(--cor-neon);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: var(--fonte-texto);
+    margin: 10px 5px;
+}
+
+.projetos__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-top: 2.5rem;
+    gap: 20px;
+    justify-content: center;
+}
+
+/*pesquisas para reparar esse codido*/
+.projetos__card {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    box-sizing: border-box;
+    border: 2px solid var(--cor-neon);
+    border-radius: 6px;
+    background-color: var(--cor-cinza);
+}
+
+.projetos__card__imagem {
+    width: 100%;
+    height: 60%;
+    border-radius: 4px;
+}
+
+.projetos__card__titulo1 {
+    margin: 0.8rem 0 0.4rem 0;
+    font-size: 1.3rem;
+    text-align: center;
+    color: var(--cor-neon);
+    padding: 0.2rem;
+}
+
+.projetos__card__descricao {
+    font-size: 1rem;
+    text-align: center;
+    color: var(--cor-neon);
+    padding: 0.5rem;
+
+    /* Faz essa caixa crescer para empurrar os botões para o fundo */
+    flex-grow: 1;
+    margin-bottom: 0.8rem;
+
+    /* Garante que o texto não "vaze" do  quadrado */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clam: 4;
+    -webkit-box-orient: vertical;
+}
+
+.projetos__card__btns {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: auto;
+    /* Segurança extra para colar no fundo */
+}
+
+.projetos__card__btns a {
+    flex: 1;
+    text-align: center;
+    padding: 0.5rem;
+    border: 1px solid var(--cor-body);
+    background: var(--cor-neon);
+    color: var(--cor-body);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    font-family: var(--fonte-texto);
+    border-radius: 4px;
+}
+
+.projetos__card__btns a:hover {
+    background: transparent;
+    color: var(--cor-neon);
+    border: 1px solid var(--cor-neon);
+    box-shadow: 0 0 8px var(--cor-neon);
+}
+
+.contato {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 400px;
+    margin: 30px auto;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 5rem;
+}
+
+.contato__titulo {
+    font-size: 2.1rem;
+    color: var(--cor-neon);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: var(--fonte-texto);
+}
+
+.contato__paragrafo {
+    font-size: 1.9rem;
+    font-family: var(--fonte-texto);
+    color: var(--cor-branco-levemente-cinzar);
+}
+
+.contato__formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contato__formulario input,
+.contato__formulario textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid var(--cor-branco-levemente-cinzar);
+    background-color: var(--cor-cinza);
+    color: var(--cor-texto);
+}
+
+.contato__formulario textarea {
+    resize: none;
+    height: 120px;
+}
+
+.contato__mensagemErro {
+    color: var(--cor-neon);
+    font-size: 1.1rem;
+    font-family: var(--fonte-texto);
+}
+
+.contato__formulario button {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: var(--cor-neon);
+    color: var(--cor-body);
+    cursor: pointer;
+    transition: 0, 3s;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-family: var(--fonte-texto);
+}
+
+.contato__formulario button:hover {
+    background: transparent;
+    color: var(--cor-neon);
+    box-shadow: 0 0 8px var(--cor-neon);
+}
+
+
+.rodape__links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.rodape__texto {
+    font-size: 0.8rem;
+    font-family: var(--fonte-texto);
+    color: var(--cor-branco-levemente-cinzar);
+    margin-bottom: 0.4rem;
+}
+
+.rodape__titulos {
+    font-size: 0.8rem;
+    font-family: var(--fonte-titulo);
+    color: var(--cor-neon);
+    margin-bottom: 0.4rem;
+}
+
+/*estilizar para deixar responsivel em telas menos*/
+@media (max-width: 768px) {
+
+    .cabecalho {
+        padding: 0.6rem 1rem;
+    }
+
+    .cabecalho__navegacao {
+        gap: 2rem;
+        justify-content: space-between;
+    }
+
+    .cabecalho__logo {
+        width: 80px;
+    }
+
+    /* organiza a cabeca  */
+    .cabecalho__navegacao {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* esconder menus  no desktop */
+    .navecagao__menu__esquerda,
+    .navecagao__menu__direita {
+        display: none;
+    }
+
+    .cabecalho__logo {
+        width: 30%;
+        height: auto;
+    }
+
+    /* o botao */
+    .menu__toggle {
+        display: block;
+        font-size: 2.2rem;
+        background: none;
+        border: none;
+        color: var(--cor-hover);
+        flex-shrink: 0;
+        margin-right: 2rem;
+    }
+
+    .container__menu__mobile {
+        position: absolute;
+        top: 55%;
+        right: 5%;
+        z-index: 100;
+        margin-top: 0.6rem;
+    }
+
+    .menu__navegacao__mobile {
+        display: none;
+        background: var(--cor-body);
+        width: 80px;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    /* QUANDO ATIVO */
+    .menu__navegacao__mobile.ativo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .mobile__link__linkis {
+        width: 100%;
+        text-align: center;
+        font-size: 0.9rem;
+        background: transparent;
+        border: 1px solid var(--cor-hover);
+        border-radius: 1px;
+        color: var(--cor-neon);
+        text-decoration: none;
+        padding: 10px 0;
+        font-family: var(--fonte-texto);
+    }
+
+    .mobile__link__linkis:hover {
+        color: var(--cor-neon);
+        background-color: var(--cor-cinza);
+    }
+
+    /*conteudo da pagina*/
+    .conteudo__home {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 4rem;
+        padding: 0 10%;
+    }
+
+    .conteudo__home__titulo {
+        font-size: 1.6rem;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    .conteudo__home__paragrafo {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-top: 0.5rem;
+        opacity: 0.9;
+        max-width: 400px;
+    }
+
+    .conteudo__home__linkins {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        width: 100%;
+    }
+
+    .conteudo__home__foto {
+        width: 74%;
+        max-width: 380px;
+        order: -1;
+    }
+
+    .sobre {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 3rem 1.5rem;
+        text-align: center;
+    }
+
+    .sobre__subtitulo {
+        font-size: 1.8rem;
+        line-height: 1.4;
+        text-align: center;
+        margin-bottom: 0.8rem;
+        width: 100%;
+    }
+
+    .sobre__descricao__paragrafo {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        text-align: center;
+        max-width: 100%;
+        margin: 0;
+        margin: 1.5rem
+    }
+
+    .projetos__container {
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .projetos__card__titulo1 {
+        font-size: 1.2rem;
+    }
+
+
+    .rodape__titulos {
+        font-family: var(--fonte-titulo);
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+
+    .rodape__texto {
+        font-size: 1rem;
+        font-family: var(--fonte-texto);
+    }
+}
