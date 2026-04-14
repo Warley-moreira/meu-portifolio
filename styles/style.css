@@ -44,14 +44,6 @@ body {
     grid-template-rows: auto 1fr auto;
     text-align: center;
     box-sizing: content-box;
-
-}
-
-.header {
-    grid-area: header;
-    background: var(--gradiente-moderno);
-    padding: 2.5rem;
-
 }
 
 .cabecalho {
@@ -59,7 +51,7 @@ body {
     background: radial-gradient(circle at center, #0a2b0a 0%, #000000 80%);
     color: var(--cor-texto);
     font-size: 2rem;
-    padding: 0.8rem;
+    padding: 1rem;
     border-bottom: 2px solid var(--cor-neon);
     /*o cabecalho ficar fixo*/
     position: fixed;
@@ -67,9 +59,7 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-
 }
-
 
 .conteudo {
     grid-area: conteudo;
