@@ -560,18 +560,24 @@ body {
 
     .container__menu__mobile {
         position: absolute;
-        top: 55%;
-        right: 5%;
+        top: -10;
+        right: 2%;
         z-index: 100;
-        margin-top: 0.6rem;
+        margin-top: 0.7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
     }
 
     .menu__navegacao__mobile {
         display: none;
         background: var(--cor-body);
-        width: 80px;
         flex-direction: column;
-        text-align: left;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid var(--cor-neon);
     }
 
     /* QUANDO ATIVO */
@@ -581,15 +587,12 @@ body {
     }
 
     .mobile__link__linkis {
-        width: 100%;
-        text-align: center;
-        font-size: 0.9rem;
+        font-size: 1.5rem;
         background: transparent;
-        border: 1px solid var(--cor-hover);
         border-radius: 1px;
         color: var(--cor-neon);
         text-decoration: none;
-        padding: 10px 0;
+        padding: 18px 0;
         font-family: var(--fonte-texto);
     }
 
